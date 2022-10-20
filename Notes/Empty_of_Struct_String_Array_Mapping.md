@@ -1,12 +1,12 @@
 ## Empty of Struct, String, Array or Mapping
 
-There is no concept of NULL in solidity. Empty of a struct, string, array or mapping in solidtiy is treated as zero-value of each type, e.g. zero of unit type is 0.
+There is no concept of NULL in solidity. Empty of a struct, string, array or mapping in solidity is treated as zero-value of each type, e.g. zero of unit type is 0.
 
 # string
-Normally, a empty string means its length is 0. But unfortunately, string in solidity has no attribute or function to retrieve its length. Two following ways can be used to accomplish this:
+Normally, an empty string means its length is 0. But unfortunately, string in solidity has no attribute or function to retrieve its length. Two following ways can be used to accomplish this:
 ```
 string x;
-if(bytes(x).legth == 0) {......}
+if(bytes(x).length == 0) {......}
 // is empty
 ```
 or 
@@ -17,7 +17,7 @@ if (sha3(x) != sha3("")) {......}
 ```
 
 # struct
-In solidity, a struct does not need to be new'ed for its members to be accessable, where all the members are empty with their members having zero-value of each type.
+In solidity, a struct does not need to be new'ed for its members to be accessible, where all the members are empty with their members having zero-value of each type.
 ```
 struct Transaction {
   address to;
@@ -37,7 +37,7 @@ if (addrList.length == 0) {......}
 ```
 
 # mapping
-Array and mapping are accessable immediately after declaration.
+Array and mapping are accessible immediately after declaration.
 ```
 mapping(string =>Transaction ) txMapping;
 ...
