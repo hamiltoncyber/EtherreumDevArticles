@@ -17,7 +17,7 @@ if (sha3(x) != sha3("")) {......}
 ```
 
 # struct
-In solidity, a struct does not need to be new'ed for its members to be accecible, where all the members are empty.
+In solidity, a struct does not need to be new'ed for its members to be accessable, where all the members are empty with their members having zero-value of each type.
 ```
 struct Transaction {
   address to;
@@ -26,9 +26,17 @@ struct Transaction {
 }
 Transaction private tx;
 ```
-Members of tx can be accessable even tx has been assigned a value. tx.to has its zero-value: 0.
+Members of tx can be accessed even tx has been assigned, tx.to has its zero-value: 0.
 
-# array and mapping
+# array
+An empty array is an array with length of 0.
+```
+address[] addrList;
+if (addrList.length == 0) {......}
+// is empty
+```
+
+# mapping
 Array and mapping are accessable immediately after declaration.
 ```
 mapping(string =>Transaction ) txMapping;
@@ -36,5 +44,3 @@ mapping(string =>Transaction ) txMapping;
 if （txMapping["xx"].value == 0） ｛......｝
 ```
 Although the Transaction struct object txMapping[“xx”] has not been assigned, the 'value' member of this 'virtual' object can be accessed directly.
-
-
