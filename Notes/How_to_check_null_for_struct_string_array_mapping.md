@@ -31,7 +31,7 @@ Members of tx can be accessed even tx has been assigned, tx.to has its zero-valu
 # array
 An empty array is an array with length of 0.
 ```
-address[] addrList;
+address[] memory addrList;
 if (addrList.length == 0) {......}
 // is empty
 ```
